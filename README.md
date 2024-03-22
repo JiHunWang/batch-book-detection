@@ -4,9 +4,8 @@
 
 _Abstract_
 
-_This paper presents an automated system for detecting and cataloging books from images, leveraging computer vi- sion, optical character recognition (OCR), basic NLP tech- niques, and information retrieval. Tested for images un- der various conditions, including different lighting and shelf clutter, the system identifies book titles and fetches related data with an F1 score above 0.8. Notable findings include the effectiveness of noise removal in enhancing OCR ac- curacy in batch book detection. This work offers promis- ing applications for digital library management and per- sonal book-keeping, demonstrating a practical approach to streamline book organization tasks._
+_This paper presents an automated system for detecting and cataloging books from images, leveraging computer vision, optical character recognition (OCR), basic NLP techniques, and information retrieval. Tested for images under various conditions, including different lighting and shelf clutter, the system identifies book titles and fetches related data with an F1 score above 0.8. Notable findings include the effectiveness of noise removal in enhancing OCR accuracy in batch book detection. This work offers promising applications for digital library management and personal book-keeping, demonstrating a practical approach to streamline book organization tasks._
 
-This repo contains the code for the batch book detection system.
 
 
 ## Files
@@ -17,20 +16,12 @@ This repo contains the code for the batch book detection system.
 
 
 ## Supported image pre-processing methods
-1. Simple channel-averaging grayscale conversion
-$$
-C = \frac{R + G + B}{3}
-$$
-
-2. Luminosity grayscale conversion
-$$
-C = 0.299R + 0.587G + 0.114B
-$$
-
-3. Adaptive thresholding
-4. Noise removal
-5. Contrast enhancement
-6. Thinning and skeletonization
+1. Simple channel-averaging grayscale conversion: $C = \dfrac{R + G + B}{3}$
+2. Luminosity grayscale conversion: $C = 0.299R + 0.587G + 0.114B$
+3. Adaptive thresholding: Binarize the image based on local lighting conditions
+4. Noise removal: Smoothen the image by removing small patches with relatively high intensity
+5. Contrast enhancement: Enhance the color contrast between the text and the background
+6. Thinning and skeletonization: Selectively refine the appearance of the text by adjust the width of text
 
 
 ## Supported basic post-processing NLP techniques
